@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi registro de lectura</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Mi registro de lectura</h1>
+    <p>Registra un libro leído y compara los dos tipos de almacenamiento.</p>
+
+    <!-- Formulario para registrar cada lectura. -->
+    <form id="formulario">
+      <label for="titulo">Título del libro</label>
+      <input id="titulo" maxlength="120" required placeholder="Ejemplo: El principito">
+      <button type="submit">Registrar lectura</button>
+    </form>
+    <p id="estado" role="status" aria-live="polite"></p>
+
+    <section class="tarjetas" aria-label="Contadores">
+      <article>
+        <h2>Total en este navegador</h2>
+        <p class="numero" id="total">0</p>
+        <p>Se guarda con localStorage y se comparte entre pestañas del mismo sitio.</p>
+      </article>
+      <article>
+        <h2>En esta pestaña</h2>
+        <p class="numero" id="sesion">0</p>
+        <p>Se guarda con sessionStorage durante la sesión de esta pestaña.</p>
+      </article>
+    </section>
+
+    <button type="button" id="reiniciar">Reiniciar contadores del navegador</button>
+    <p>Este botón no borra el historial de la base de datos.</p>
+
+    <section>
+      <h2>Últimos eventos en MySQL</h2>
+      <button type="button" id="actualizar">Actualizar historial</button>
+      <ul id="historial"><li>Cargando...</li></ul>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
